@@ -11,8 +11,12 @@
  */
 int _abs(int i)
 {
-	int abs_i = abs(i);
+	if (i < 0)
+	{
+		int abs_i;
 
-	printf("the absolute value of %d is %d\n", i, abs_i);
-	return (0);
+		abs_i = i * -1;
+		return (abs_i);
+	}
+	return (i);
 }
