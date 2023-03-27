@@ -29,7 +29,7 @@ void puts_half(char *str)
 
 	for (; k < i; k++)
 	{
-		printf("%c", str[k]);
+		putchar(str[k]);
 	}
 	putchar('\n');
 }
