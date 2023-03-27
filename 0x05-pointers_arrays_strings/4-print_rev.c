@@ -3,7 +3,8 @@
 #include <string.h>
 
 /**
- * print_rev - A function that prints a string, in reverse, followed by a new line.
+ * print_rev - A function that prints a string
+ * in reverse, followed by a new line.
  * @s: the char to be checked
  *
  * Return: void
