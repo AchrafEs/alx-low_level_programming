@@ -10,15 +10,19 @@
  */
 char *cap_string(char *str)
 {
-	int len = strlen(str);
-	int i;
+	int i = 0;
 
-	for (i = 0; i < len; i++)
+	while(str[i])
 	{
-		if (islower(str[i]))
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
-			str[i] = toupper(str[i]);
+			i++;
 		}
+		if (str[i - 1] == ' ' || str[i - 1] == '\t' || str[i - 1] == '\n' || str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' || str[i - 1] == '!' ||                str[i - 1] == '?' || str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' || str[i - 1] == '}' || i == 0)
+		{
+			str[i] -= 32;
+		}
+		i++;
 	}
 	return (str);
 }
