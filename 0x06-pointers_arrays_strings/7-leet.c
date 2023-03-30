@@ -4,16 +4,15 @@
 
 /**
  * *leet - a function that encodes a string into 1337.
- * @*: a character
+ * @str: a character
  *
  * Return: the encoded string.
  */
-char *leet(char *)
+char *leet(char *str)
 {
-	char str[];
 	char letters[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int numbers[] = {4, 3, 0, 7, 1};
-	int letter_count = sizeof(letters)/sizeof(letters[0]);
+	char numbers[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	int letter_count = sizeof(letters) / sizeof(letters[0]);
 	int i, j;
 	int str_len = strlen(str);
 
@@ -21,9 +20,9 @@ char *leet(char *)
 	{
 		for (j = 0; j < letter_count; j++)
 		{
-			if (str[i] = letters[j])
+			if (str[i] == letters[j])
 			{
-				str[i] = numbers[j] + '0';
+				str[i] = numbers[j];
 				break;
 			}
 		}
