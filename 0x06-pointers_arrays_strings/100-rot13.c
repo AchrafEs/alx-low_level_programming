@@ -16,10 +16,6 @@ char *rot13(char *str)
 		{
 			str[i] = (char) ((str[i] - 'a' + 13) % 26 + 'a');
 		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = (char) ((str[i] - 'A' + 13) % 26 + 'A');
-		}
 	}
 	return (str);
 }
