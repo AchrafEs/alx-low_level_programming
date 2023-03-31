@@ -9,7 +9,5 @@
  */
 void print_number(int n)
 {
-	struct result{ int value;
-	}
-	result -> value = n;
+	printf("%d\n", n);
 }
