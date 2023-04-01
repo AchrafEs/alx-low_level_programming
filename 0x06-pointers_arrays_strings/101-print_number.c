@@ -9,5 +9,16 @@
  */
 void print_number(int n)
 {
-	printf("%d\n", n);
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
+		putchar('\n');
+	}
+	if (n / 10 != 0)
+	{
+		print_number(n / 10);
+		putchar('\n');
+	}
+	putchar(n % 10 + '0');
 }
