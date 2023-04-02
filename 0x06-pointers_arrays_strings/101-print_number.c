@@ -9,7 +9,7 @@
  */
 void print_number(int n)
 {
-	unsigned int i = n;
+	long int i = n;
 
 	if (n < 0)
 	{
@@ -22,5 +22,5 @@ void print_number(int n)
 	{
 		print_number(i);
 	}
-	putchar((unsigned int) n % 10 + '0');
+	putchar(n % 10 + '0');
 }
