@@ -9,7 +9,7 @@
  */
 void print_number(int n)
 {
-	long int i = n;
+	signed int i = n;
 
 	if (n < 0)
 	{
