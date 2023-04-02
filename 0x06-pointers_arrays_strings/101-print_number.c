@@ -9,18 +9,15 @@
  */
 void print_number(int n)
 {
-	signed int i = n;
+	int i = n;
 
 	if (n < 0)
 	{
-		n *= -1;
-		i = n;
-		putchar('-');
+		i -= n;
 	}
-	i /= 10;
-	if (i != 0)
+	if (i >= 0)
 	{
-		print_number(i);
+		i += n;
 	}
-	putchar(n % 10 + '0');
+	printf("%d", n);
 }
