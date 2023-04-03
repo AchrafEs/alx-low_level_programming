@@ -13,14 +13,10 @@ char *_strchr(char *s, char c)
 {
 	char *ptr = strchr(s, c);
 
-	if (ptr != NULL)
+	while (*s != '\0')
 	{
-		printf("%c" , s);
+		return (ptr);
+		ptr++;
 	}
-	else
-	{
-		putchar(0);
-	}
-	putchar('\n');
 	return (NULL);
 }
