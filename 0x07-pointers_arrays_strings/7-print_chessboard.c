@@ -3,7 +3,7 @@
 
 /**
  * print_chessboard - a function that prints the chessboard.
- * @(*a)[8]: Multidimensional array.
+ * @a: two dimensional array.
  *
  * Return: void
  */
