@@ -12,18 +12,16 @@
 void print_diagsums(int *a, int size)
 {
 	int i, j;
-	int sum, sum_1;
-	int rows = sizeof(a) / sizeof(a[0]);
-	int columns = sizeof(a[0]) / sizeof(*a);
+	int sum = 0, sum_1 = 0;
 
-	for (i = 0; i < rows; i++)
+	for (i = 0; i < size; i++)
 	{
-		sum += a[i] + size;
+		sum += *(a + i * size + i);
 		printf("%d, ", sum);
 	}
-	for (j = 0; j < columns; j++)
+	for (j = 0, j = size - 1; i < size; i++, j--)
 	{
-		sum_1 += a[j] + size;
+		sum_1 += *(a + i * size + (size - i -1));
 		printf("%d, ", sum_1);
 	}
 	putchar('\n');
