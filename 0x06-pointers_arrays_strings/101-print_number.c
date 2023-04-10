@@ -13,11 +13,12 @@ void print_number(int n)
 
 	if (n < 0)
 	{
+		_putchar('-');
 		i = -n;
 	}
-	if (i >= 0)
+	if (i / 10 != 0)
 	{
-		i = n;
+		print_number(i / 10);
 	}
-	printf("%d", n);
+	_putchar((i % 10) + '0');
 }
