@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * rot13 - a function that encodes a string using rot13.
@@ -9,19 +8,19 @@
  */
 char *rot13(char *str)
 {
-	char letters[] = {'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M'};
-	char rot__13[] = {'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z'};
-	int letter_count = sizeof(letters) / sizeof(letters[0]);
 	int i, j;
-	int str_len = strlen(str);
+	char letters[] =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] =
+	"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; i < str_len; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < letter_count; j++)
+		for (j = 0; j < 52; j++)
 		{
 			if (str[i] == letters[j])
 			{
-				str[i] = rot__13[j];
+				str[i] = rot13[j];
 				break;
 			}
 		}
