@@ -23,7 +23,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr != NULL)
 	{
 		pointer = ptr;
-		for (i = 0; i < nmemb; i++)
+		for (i = 0; i < nmemb * size; i++)
 		{
 			pointer[i] = 0;
 		}
