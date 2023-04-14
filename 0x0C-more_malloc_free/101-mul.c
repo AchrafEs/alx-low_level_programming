@@ -82,6 +82,7 @@ void multiply(char *num1, char *num2, char *result)
 	}
 	for (i = len1 - 1; i >= 0; i--)
 	{
+		carry = 0;
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			sum = (num1[i] - '0') * (num2[j] - '0') + carry;
