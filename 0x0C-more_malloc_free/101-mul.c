@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_DIGITS 1000
+#include <ctype.h>
 
 void multiply(char *num1, char *num2, char *result);
 
@@ -20,10 +19,10 @@ int main(int argc, char **argv)
 	num2 = argv[2];
 	len1 = strlen(num1);
 	len2 = strlen(num2);
-	result = calloc(len1 + len2, sizeof(char));
+	result = malloc((len1 + len2) * sizeof(char));
 	if (result == NULL)
 	{
-		printf("Error: Memory allocation failed\n");
+		printf("Error\n");
 		return (1);
 	}
 	multiply(num1, num2, result);
