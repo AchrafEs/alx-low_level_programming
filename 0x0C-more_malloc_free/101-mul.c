@@ -5,6 +5,14 @@
 
 void multiply(char *num1, char *num2, char *result);
 
+/**
+ * main - a program that multiplies two positive numbers.
+ * @argc: the argument count.
+ * @argv: the argument vector.
+ *
+ * Return: Always 0 (success)
+ */
+
 int main(int argc, char **argv)
 {
 	char *num1, *num2, *result;
@@ -48,30 +56,57 @@ int main(int argc, char **argv)
 	free(result);
 	return (0);
 }
+/**
+ * multiply - A function that multiplays two numbers.
+ * @num1: the first number
+ * @num2: the second number
+ * @result: the result
+ *
+ * Return: void
+ */
 
 void multiply(char *num1, char *num2, char *result)
 {
 	int len1 = strlen(num1);
 	int len2 = strlen(num2);
-	int i, j;
-	int digit1, digit2, product, pos1, pos2, sum;
+	int i, j, carry, sum;
+	int *temp;
+	int *final;
 
+	temp = malloc((len1 + len2) * sizeof(int));
+	final = malloc((len1 + len2) * sizeof(int));
 	for (i = 0; i < len1 + len2; i++)
 	{
-		result[i] = '0';
+		temp[i] = 0;
+		final[i] = 0;
 	}
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			digit1 = num1[i] - '0';
-			digit2 = num2[j] - '0';
-			product = digit1 * digit2;
-			pos1 = i + j;
-			pos2 = i + j + 1;
-			sum = (result[pos2] - '0') + product;
-			result[pos2] = (sum % 10) + '0';
-			result[pos1] += sum / 10;
+			sum = (num1[i] - '0') * (num2[j] - '0') + carry;
+			carry = sum / 10;
+			temp[i + j + 1] += sum % 10;
+			if (temp[i + j + 1] > 9)
+			{
+				temp[i + j + 1] -= 10;
+				carry++;
+			}
 		}
+		temp[i + j + 1] += carry;
 	}
+	carry = 0;
+	for (i = len1 + len2 - 1; i >= 0; i--)
+	{
+		sum = temp[i] + carry;
+		final[i] = sum % 10;
+		carry = sum / 10;
+	}
+	for (i = 0; i < len1 + len2; i++)
+	{
+		result[i] = final[i] + '0';
+	}
+	result[i] = '\0';
+	free(temp);
+	free(final);
 }
