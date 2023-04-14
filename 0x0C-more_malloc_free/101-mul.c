@@ -8,9 +8,10 @@ void multiply(char *num1, char *num2, char *result);
 int main(int argc, char **argv)
 {
 	char *num1, *num2, *result;
-	int len1, len2, i;
+	int len1, len2, i, j;
+	int len;
 
-	if (argc != 3)
+	if (argc < 3)
 	{
 		printf("Error\n");
 		exit(98);
@@ -23,7 +24,19 @@ int main(int argc, char **argv)
 	if (result == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		exit(98);
+	}
+	for (i = 1; i < argc; i++)
+	{
+		len = strlen(argv[i]);
+		for (j = 0; j < len; j++)
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
 	}
 	multiply(num1, num2, result);
 	i = 0;
