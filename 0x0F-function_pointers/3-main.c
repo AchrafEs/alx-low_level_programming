@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "function_pointers.h"
 
 /**
  * main - A program that performs simple operations.
