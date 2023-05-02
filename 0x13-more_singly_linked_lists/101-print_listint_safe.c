@@ -48,7 +48,6 @@ size_t listint_len(const listint_t *head)
 	return (0);
 }
 
-
 /**
  * print_listint_safe - a function that prints a listint_t
  * @head: a pointer to the head of the list
