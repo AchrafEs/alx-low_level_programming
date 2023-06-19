@@ -1,4 +1,4 @@
-THE 'C' PROGRAMMING LANGUAGE:
+`THE 'C' PROGRAMMING LANGUAGE`
 
 C is a general-purpose programming language that was developed in the early 1970s by Dennis Ritchie at Bell Labs.
 It is a high-level language that is widely used for developing operating systems, device drivers, embedded systems,
